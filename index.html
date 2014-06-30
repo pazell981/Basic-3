@@ -2,29 +2,35 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>jQuery Assignment 3 - Basics 3</title>
-		<meta name="description" content="jQuery Assignment - 06/30/14 - Basics 3">
+		<title>jQuery Assignment 5 - Intermediate</title>
+		<meta name="description" content="jQuery Assignment - 06/30/14 - Basics 2">
 		<link rel="stylesheet" type="text/css" href="css.css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$('.image').click(function(){
-					$(this).toggleClass("image1");
-					$(this).toggleClass("image2");
+				$('img').hover(function(){
+					var $src = $(this).attr("src")
+					$(this).attr("src", $(this).attr("data-alt-src"));
+					$(this).attr("data-alt-src", $src);
+				}, function(){
+					var $src = $(this).attr("src")
+					$(this).attr("src", $(this).attr("data-alt-src"));
+					$(this).attr("data-alt-src", $src);
 				});
 			});
 		</script>
 	</head>
 	<body>
-		<div id="container">
-			<div id="wrapper">
-				<h1>Picture Flipper</h1>
-				<div id="image_view1" class="image image1"></div><!-- image_view1 -->
-				<div id="image_view2" class="image image1"></div><!-- image_view2 -->
-				<div id="image_view3" class="image image1"></div><!-- image_view3 -->
-				<div id="image_view4" class="image image1"></div><!-- image_view4 -->
-				<div id="image_view5" class="image image1"></div><!-- image_view5 -->
-			</div><!-- wrapper -->
-		</div><!-- container -->
+		<div id="wrapper">
+			<h1>Cat & Mouse</h1>
+			<img src="cat.jpg" data-alt-src="mouse.jpg" alt="cat/mouse" class="cell r1 c1">
+			<img src="cat.jpg" data-alt-src="mouse.jpg" alt="cat/mouse" class="cell r1 c2">
+			<img src="cat.jpg" data-alt-src="mouse.jpg" alt="cat/mouse" class="cell r1 c3">
+			<img src="cat.jpg" data-alt-src="mouse.jpg" alt="cat/mouse" class="cell r1 c4">
+			<img src="cat.jpg" data-alt-src="mouse.jpg" alt="cat/mouse" class="cell r2 c1">
+			<img src="cat.jpg" data-alt-src="mouse.jpg" alt="cat/mouse" class="cell r2 c2">
+			<img src="cat.jpg" data-alt-src="mouse.jpg" alt="cat/mouse" class="cell r2 c3">
+			<img src="cat.jpg" data-alt-src="mouse.jpg" alt="cat/mouse" class="cell r2 c4">
+		</div><!-- wrapper -->
 	</body>
 </html>
